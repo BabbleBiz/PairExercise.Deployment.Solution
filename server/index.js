@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 3000
 const path = require('path')
 const db = require('./db')
 
+console.log('HI')
+
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.get('/api/users', async (req, res, next) => {
