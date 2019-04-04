@@ -16,12 +16,12 @@ install:
 before_script:
   - psql -c 'create database "deployment-exercise-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 
-before_deploy:
-  - npm run build-client # make the bundle
-   - rm -rf node_modules # omit from the tarball, since we skip cleanup
-deploy:
-  skip_cleanup: true # prevents travis from deleting the build
-   provider: heroku
-   app: biz-app-name # see README
-   api_key:
-    secure: KrV6wlDGaE1B9XJ2+93gWKMzxLf2rD1GOKzs5pF0CI4gHzUhua/oWraO1ScAGer5sqY8AhnjNDcF9qH8ppg/VPU1d/ap/MvO88JAgsp8hU1uBuWjb5RoYkiuBrt73S1ExzVrUGvBCVtOoijjFHeSKX0D08Giyy1cdgfNU/TF0QpbzmvWl/efktOwS8wCbK+avKVks4NFF9NHRboqt+gujH9Tbd/+t9Dq6cC8foSs8wSr8379X/6QcLOUCXdidszWURxA6p/LjV5zutsq0ivhE3rBFtKYom1rnUKDMRyof7KsaF1xooHC8AggqlKfwq3beM9lts3GZrlW85Y4cYaKFkt0O9QJbja+DieLLvmXcHVwkxsoy1RH/ctDPeoUxdD/d99c+vtqpP0vmXWNZGl+roDOWbr+VIpXa1E6TWxkKDIQvB8x/+Lenh5lkTQolo6c4cBaG0t1sIOmt6zkjrxdpyufBTMUIWLa95HbCzvcarPLiVMfRuAWY7x2wrKVM3L5S8k9WZTqjFNVHHJxyAJdQxeG3p6PYn8XNQb6WaX322nTSvxgJ8r2DZTda7r1HpVKrDUTkpumKZ3m7Qeh8pPsPSW2yY9YJjijeftytg46b9lut1iGMZcH/g4hrtcowNicgsgvWQWJ0ywz1KSMR2FGn42NwXeXhH7OYlrU/YAGWNk=
+# before_deploy:
+#   - npm run build-client # make the bundle
+#    - rm -rf node_modules # omit from the tarball, since we skip cleanup
+# deploy:
+#   skip_cleanup: true # prevents travis from deleting the build
+#    provider: heroku
+#    app: biz-app-name # see README
+#    api_key:
+#     secure: KrV6wlDGaE1B9XJ2+93gWKMzxLf2rD1GOKzs5pF0CI4gHzUhua/oWraO1ScAGer5sqY8AhnjNDcF9qH8ppg/VPU1d/ap/MvO88JAgsp8hU1uBuWjb5RoYkiuBrt73S1ExzVrUGvBCVtOoijjFHeSKX0D08Giyy1cdgfNU/TF0QpbzmvWl/efktOwS8wCbK+avKVks4NFF9NHRboqt+gujH9Tbd/+t9Dq6cC8foSs8wSr8379X/6QcLOUCXdidszWURxA6p/LjV5zutsq0ivhE3rBFtKYom1rnUKDMRyof7KsaF1xooHC8AggqlKfwq3beM9lts3GZrlW85Y4cYaKFkt0O9QJbja+DieLLvmXcHVwkxsoy1RH/ctDPeoUxdD/d99c+vtqpP0vmXWNZGl+roDOWbr+VIpXa1E6TWxkKDIQvB8x/+Lenh5lkTQolo6c4cBaG0t1sIOmt6zkjrxdpyufBTMUIWLa95HbCzvcarPLiVMfRuAWY7x2wrKVM3L5S8k9WZTqjFNVHHJxyAJdQxeG3p6PYn8XNQb6WaX322nTSvxgJ8r2DZTda7r1HpVKrDUTkpumKZ3m7Qeh8pPsPSW2yY9YJjijeftytg46b9lut1iGMZcH/g4hrtcowNicgsgvWQWJ0ywz1KSMR2FGn42NwXeXhH7OYlrU/YAGWNk=
